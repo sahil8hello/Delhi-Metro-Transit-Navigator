@@ -10,7 +10,7 @@ An optimized pathfinding engine designed for the Delhi Metro rail network. This 
 
 Data ProcessingEnsure you have the GTFS files in your root directory, then run the Python script:
 
-	Bashpython process_metro.py.
+	Bashpython process_metro.py
 	
 Altough Json file is already given.
 
