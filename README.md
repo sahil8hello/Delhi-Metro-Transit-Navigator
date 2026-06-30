@@ -1,16 +1,14 @@
 An optimized pathfinding engine designed for the Delhi Metro rail network. This project provides a bridge between real-world transit data (GTFS) and a high-speed routing solver.
 
-🚀 Overview:
+🚀 Overview: 	This project processes raw Delhi Metro transit schedules and constructs a weighted directed graph where nodes represent stations/platforms and edges represent travel times. The routing engine utilizes Dijkstra’s Algorithm implemented in C++ to calculate the shortest path between any two metro stations, accounting for interchange penalties between lines.
 
-	This project processes raw Delhi Metro transit schedules and constructs a weighted directed graph where nodes represent stations/platforms and edges represent travel times. The routing engine utilizes Dijkstra’s Algorithm implemented in C++ to calculate the shortest path between any two metro stations, accounting for interchange penalties between lines.
+🛠 Tech StackData Processing: 	Python, Pandas (for cleaning and structuring GTFS data).Graph Modeling: JSON (for data serialization), Graph Theory (Adjacency List).Routing Engine: C++, STL (std::priority_queue), JSON (nlohmann/json).
 
-🛠 Tech StackData Processing: 
+🏗 System ArchitectureData Pipeline (Python): 	Parses raw GTFS stop_times.txt and trips.txt files, calculates average segment travel times, and generates a structured metro_graph.json map.Pathfinding Engine (C++): Loads the graph into memory using an efficient Adjacency List and executes Dijkstra's algorithm to provide sub-millisecond route calculation.Logic: Incorporates "Transfer Edges" to accurately model the time cost of switching lines at interchange stations.
 
-	Python, Pandas (for cleaning and structuring GTFS data).Graph Modeling: JSON (for data serialization), Graph Theory (Adjacency List).Routing Engine: C++, STL (std::priority_queue), JSON (nlohmann/json).
+⚙️ How to Run1
 
-🏗 System ArchitectureData Pipeline (Python): 
-
-	Parses raw GTFS stop_times.txt and trips.txt files, calculates average segment travel times, and generates a structured metro_graph.json map.Pathfinding Engine (C++): Loads the graph into memory using an efficient Adjacency List and executes Dijkstra's algorithm to provide sub-millisecond route calculation.Logic: Incorporates "Transfer Edges" to accurately model the time cost of switching lines at interchange stations.⚙️ How to Run1. Data ProcessingEnsure you have the GTFS files in your root directory, then run the Python script:Bashpython process_metro.py
+Data ProcessingEnsure you have the GTFS files in your root directory, then run the Python script:Bashpython process_metro.py. Altough Json file is already given.
 
 Compilation: Compile the C++ engine with optimizations: 
 
